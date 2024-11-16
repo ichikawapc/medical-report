@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Report</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Medical Report</h1>
+        <div class="report-links">
+            <p>作成する報告書の書式を選んで下さい。</p>
+            <div class="link-buttons">
+                <a href="carotid.html">頸動脈エコー</a>
+                <a href="#">心エコー</a>
+                <a href="#">腹部エコー</a>
+                <a href="#">下肢静脈エコー</a>
+                <a href="#">下肢動脈エコー</a>
+                <a href="#">甲状腺エコー</a>
+                <a href="#">手根管エコー</a>
+                <a href="#">その他エコー</a>
+            </div>
+        </div>
+        <div class="report-search">
+            <p>検索したい患者情報を入力して下さい。</p>
+            <div class="search-form">
+                <form action="GET">
+                    <div>
+                        <label for="id">患者ID</label>
+                        <input type="text" name="id">
+                    </div>
+                    <div>
+                        <label for="date"></label>
+                        <input type="date" name="date">
+                    </div>
+                    <div>
+                        <input type="submit" name="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

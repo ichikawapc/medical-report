@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Report</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>頸動脈エコー報告書</h2>
+        <div class="report-form">
+            <form action="POST">
+                <div class="report-form__date">
+                    <label for="date">検査日</label>
+                    <input type="date" name="date">
+                </div>
+                <div class="report-form__department">
+                    <label for="department">診療科</label>
+                    <select name="department" id="">
+                        <option value="1">外来</option>
+                        <option value="2">2F</option>
+                        <option value="3">3F</option>
+                        <option value="5">5F</option>
+                    </select>
+                </div>
+                <div class="report-form__patient">
+                    <div>
+                        <label for="id">患者ID</label>
+                        <input type="text" name="id">
+                    </div>
+                    <div>
+                        <label for="name">患者氏名</label>
+                        <input type="text" name="name">
+                    </div>
+                    <div>
+                        <label for="dateOfBirth">生年月日</label>
+                        <input type="date" name="dateOfBirth">
+                        <!-- 生年月日の入力方法は要検討 -->
+                        <!-- 年齢は生年月日と検査日から自動算出を検討 -->
+                    </div>
+                </div>
+                <div class="report-form__results">
+                    <div class="report-form__results--right">
+                        <h5>右</h5>
+                        <h6>プラーク狭窄率(%)</h6>
+                        <div class="report-form__result--CCA">
+                            <label for="CCA">CCA</label>
+                            <select name="CCA" id="">
+                                <option value="1">ECST</option>
+                                <option value="2">NASCET</option>
+                                <option value="3">Area</option>
+                            </select>
+                            <input type="text" name="CCA">
+                        </div>
+                        <div class="report-form__result--BIF">
+                            <label for="BIF">BIF</label>
+                            <select name="BIF" id="">
+                                <option value="1">ECST</option>
+                                <option value="2">NASCET</option>
+                                <option value="3">Area</option>
+                            </select>
+                            <input type="text" name="BIF">
+                        </div>
+                        <div class="report-form__result--ICA">
+                            <label for="ICA">ICA</label>
+                            <select name="ICA" id="">
+                                <option value="1">ECST</option>
+                                <option value="2">NASCET</option>
+                                <option value="3">Area</option>
+                            </select>
+                            <input type="text" name="ICA">
+                        </div>
+                        <div class="report-form__schema">
+                            <h6>シェーマ</h6>
+                            <!-- シェーマを描くスペースを作る -->
+                        </div>
+                        <div class="report-form__findings">
+                            <h6>所見</h6>
+                            <textarea name="findings" id=""></textarea>
+                            <!-- とりあえず、一旦はフリーで文字入力するスペース。後に定型文を検討していく。 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="report-form__results">
+                    <div class="report-form__results--left">
+                        <h5>左</h5>
+                        <h6>プラーク狭窄率(%)</h6>
+                        <div class="report-form__result--CCA">
+                            <label for="CCA">CCA</label>
+                            <select name="CCA" id="">
+                                <option value="1">ECST</option>
+                                <option value="2">NASCET</option>
+                                <option value="3">Area</option>
+                            </select>
+                            <input type="text" name="CCA">
+                        </div>
+                        <div class="report-form__result--BIF">
+                            <label for="BIF">BIF</label>
+                            <select name="BIF" id="">
+                                <option value="1">ECST</option>
+                                <option value="2">NASCET</option>
+                                <option value="3">Area</option>
+                            </select>
+                            <input type="text" name="BIF">
+                        </div>
+                        <div class="report-form__result--ICA">
+                            <label for="ICA">ICA</label>
+                            <select name="ICA" id="">
+                                <option value="1">ECST</option>
+                                <option value="2">NASCET</option>
+                                <option value="3">Area</option>
+                            </select>
+                            <input type="text" name="ICA">
+                        </div>
+                        <div class="report-form__schema">
+                            <h6>シェーマ</h6>
+                            <!-- シェーマを描くスペースを作る -->
+                        </div>
+                        <div class="report-form__findings">
+                            <h6>所見</h6>
+                            <textarea name="findings" id=""></textarea>
+                            <!-- とりあえず、一旦はフリーで文字入力するスペース。後に定型文を検討していく。 -->
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
