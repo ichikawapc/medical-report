@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Report</title>
+</head>
+
+<body>
+    <h2>頸部血管超音波検査　報告書</h2>
+    <div>
+        <div class="patient-information">
+            <p>検査日:&nbsp;</p>
+            <!-- formからdateを取得 -->
+            <p></p>
+        </div>
+        <div>
+            <p>依頼科:&nbsp;</p>
+            <!-- formからdepartmentを取得 -->
+            <p></p>
+        </div>
+        <br>
+        <div>
+            <p>ID:&nbsp;</p>
+            <!-- formからidを取得 -->
+            <p></p>
+        </div>
+        <br>
+        <div>
+            <p>氏名:&nbsp;</p>
+            <!-- formからnameを取得し、最後に「殿」を付ける -->
+            <p></p>
+        </div>
+        <div>
+            <p>性別:&nbsp;</p>
+            <!-- formからsexを取得 -->
+            <p></p>
+        </div>
+        <br>
+        <div>
+            <p>生年月日:&nbsp;</p>
+            <!-- formからdateOfBirthを取得 -->
+            <p></p>
+            <!-- 生年月日の横に年齢を表示、最後に「歳」を付ける -->
+            <p></p>
+        </div>
+    </div>
+    <div class="stenosis-table">
+        <h6>プラーク狭窄情報</h6>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>右</th>
+                <th></th>
+                <th></th>
+                <th>左</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>CCA</th>
+                <th>BIF</th>
+                <th>ICA</th>
+                <th>CCA</th>
+                <th>BIF</th>
+                <th>ICA</th>
+            </tr>
+            <tr>
+                <th>計測法</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>狭窄率(%)</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>分類</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
