@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Report</title>
+    <link rel="stylesheet" href="styles/carotid.css">
 </head>
 
 <body>
@@ -95,6 +96,22 @@
                 <td></td>
             </tr>
         </table>
+    </div>
+    <div class="findings">
+        <h6>右</h6>
+        <div class="schema"></div>
+        <div class="comment"></div>
+    </div>
+    <div class="findings">
+        <h6>左</h6>
+        <div class="schema"></div>
+        <div class="comment"></div>
+    </div>
+    <div class="buttons">
+        <!-- form画面に戻って修正するボタン -->
+        <button>戻る</button>
+        <!-- 印刷後、index.htmlへ戻るボタン -->
+        <button onclick="back()">終了</button>
     </div>
     <script src="scripts/main.js"></script>
 </body>

@@ -1,0 +1,8 @@
+th,
+td {
+    border: 1px #000000 solid;
+}
+
+td {
+    width: 50px;
+}
