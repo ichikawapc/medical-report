@@ -11,7 +11,7 @@
     <div class="container">
         <h2>頸動脈エコー報告書</h2>
         <div class="report-form">
-            <form action="" method="POST" onsubmit="confirmFormC()">
+            <form action="confirmC.html" method="POST" id="formC" onsubmit="confirmFormC()">
                 <div class="report-form__date">
                     <label for="date">検査日</label>
                     <input type="date" name="date">
@@ -28,7 +28,7 @@
                 <div class="report-form__patient">
                     <div>
                         <label for="id">患者ID</label>
-                        <input type="text" name="id">
+                        <input type="text" name="id" id="id">
                     </div>
                     <div>
                         <label for="name">患者氏名</label>
