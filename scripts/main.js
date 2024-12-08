@@ -1,12 +1,48 @@
-// let button = document.getElementById("submit");
-// button.onclick = onSubmit;
-
 function confirmFormC() {
-    confirmId.innerText = id.value;
+    outputDate.innerText = inputDate.value;
+    if (inputDepartment.value == "outpatient") {
+        outputDepartment.innerText = "外来";
+    } else if (inputDepartment.value == "2F") {
+        outputDepartment.innerText = "2F";
+    } else if (inputDepartment.value == "3F") {
+        outputDepartment.innerText = "3F";
+    } else if (inputDepartment.value == "5F") {
+        outputDepartment.innerText = "5F";
+    } else {
+        outputDepartment.innerText = "";
+    }
+    outputId.innerText = inputId.value;
+    outputName.innerText = inputName.value + "　殿";
+    if (inputSex.value == "male") {
+        outputSex.innerText = "男性";
+    } else if (inputSex.value == "female") {
+        outputSex.innerText = "女性";
+    } else {
+        outputSex.innerText = "";
+    }
+    outputBD.innerText = inputBD.value;
 }
 
-let id = document.getElementById("id");
-let confirmId = document.getElementById("confirmId");
+let inputDate = document.getElementById("date");
+let outputDate = document.getElementById("outputDate");
+
+let inputDepartment = document.getElementById("department");
+let outputDepartment = document.getElementById("outputDepartment");
+
+let inputId = document.getElementById("id");
+let outputId = document.getElementById("outputId");
+
+let inputName = document.getElementById("name");
+let outputName = document.getElementById("outputName");
+
+let inputSex = document.getElementById("sex");
+let outputSex = document.getElementById("outputSex");
+
+let inputBD = document.getElementById("BD");
+let outputBD = document.getElementById("outputBD");
+
+let checkButton = document.getElementById("checkButton");
+checkButton.addEventListener("click", confirmFormC);
 
 // 戻るボタンの操作
 function back() {
@@ -23,4 +59,3 @@ function fin() {
     }
 }
 
-document.getElementById("id").textContent = id;

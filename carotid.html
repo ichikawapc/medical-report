@@ -10,126 +10,152 @@
 <body>
     <div class="container">
         <h2>頸動脈エコー報告書</h2>
-        <div class="report-form">
-            <form action="confirmC.html" method="POST" id="formC" onsubmit="confirmFormC()">
-                <div class="report-form__date">
+        <div class="input-report">
+            <div class="input-report__patient-info">
+                <div>
                     <label for="date">検査日</label>
-                    <input type="date" name="date">
+                    <input type="date" name="date" id="date">
                 </div>
-                <div class="report-form__department">
-                    <label for="department">診療科</label>
-                    <select name="department" id="">
-                        <option value="1">外来</option>
-                        <option value="2">2F</option>
-                        <option value="3">3F</option>
-                        <option value="5">5F</option>
+                <div>
+                    <label for="department">依頼科</label>
+                    <select name="department" id="department">
+                        <option value="null">----</option>
+                        <option value="outpatient">外来</option>
+                        <option value="2F">2F</option>
+                        <option value="3F">3F</option>
+                        <option value="5F">5F</option>
                     </select>
                 </div>
-                <div class="report-form__patient">
+                <div>
+                    <label for="id">患者ID</label>
+                    <input type="text" name="id" id="id">
+                </div>
+                <div>
+                    <label for="name">患者氏名</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div>
+                    <label for="sex">性別</label>
+                    <select name="sex" id="sex">
+                        <option value="null">----</option>
+                        <option value="male">男性</option>
+                        <option value="female">女性</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="BD">生年月日</label>
+                    <input type="date" name="BD" id="BD">
+                </div>
+                <input type="button" value="送信" id="checkButton">
+            </div>
+            <div class="outputFormC">
+                <h2>頸部血管超音波検査　報告書</h2>
+                <div class="patient-information">
                     <div>
-                        <label for="id">患者ID</label>
-                        <input type="text" name="id" id="id">
+                        <p>検査日:&nbsp;</p>
+                        <!-- formからdateを取得 -->
+                        <p id="outputDate"></p>
                     </div>
                     <div>
-                        <label for="name">患者氏名</label>
-                        <input type="text" name="name">
+                        <p>依頼科:&nbsp;</p>
+                        <!-- formからdepartmentを取得 -->
+                        <p id="outputDepartment"></p>
+                    </div>
+                    <br>
+                    <div>
+                        <p>ID:&nbsp;</p>
+                        <!-- formからidを取得 -->
+                        <p id="outputId"></p>
+                    </div>
+                    <br>
+                    <div>
+                        <p>氏名:&nbsp;</p>
+                        <!-- formからnameを取得し、最後に「殿」を付ける -->
+                        <p id="outputName"></p>
                     </div>
                     <div>
-                        <label for="dateOfBirth">生年月日</label>
-                        <input type="date" name="dateOfBirth">
-                        <!-- 生年月日の入力方法は要検討 -->
-                        <!-- 年齢は生年月日と検査日から自動算出を検討 -->
+                        <p>性別:&nbsp;</p>
+                        <!-- formからsexを取得 -->
+                        <p id="outputSex"></p>
+                    </div>
+                    <br>
+                    <div>
+                        <p>生年月日:&nbsp;</p>
+                        <!-- formからdateOfBirthを取得 -->
+                        <p id="outputBD"></p>
+                        <!-- 生年月日の横に年齢を表示、最後に「歳」を付ける -->
+                        <p></p>
                     </div>
                 </div>
-                <div class="report-form__results">
-                    <div class="report-form__results--right">
-                        <h5>右</h5>
-                        <h6>プラーク狭窄率(%)</h6>
-                        <div class="report-form__result--CCA">
-                            <label for="CCA">CCA</label>
-                            <select name="CCA" id="">
-                                <option value="1">ECST</option>
-                                <option value="2">NASCET</option>
-                                <option value="3">Area</option>
-                            </select>
-                            <input type="text" name="CCA">
-                        </div>
-                        <div class="report-form__result--BIF">
-                            <label for="BIF">BIF</label>
-                            <select name="BIF" id="">
-                                <option value="1">ECST</option>
-                                <option value="2">NASCET</option>
-                                <option value="3">Area</option>
-                            </select>
-                            <input type="text" name="BIF">
-                        </div>
-                        <div class="report-form__result--ICA">
-                            <label for="ICA">ICA</label>
-                            <select name="ICA" id="">
-                                <option value="1">ECST</option>
-                                <option value="2">NASCET</option>
-                                <option value="3">Area</option>
-                            </select>
-                            <input type="text" name="ICA">
-                        </div>
-                        <div class="report-form__schema">
-                            <h6>シェーマ</h6>
-                            <!-- シェーマを描くスペースを作る -->
-                        </div>
-                        <div class="report-form__findings">
-                            <h6>所見</h6>
-                            <textarea name="findings" id=""></textarea>
-                            <!-- とりあえず、一旦はフリーで文字入力するスペース。後に定型文を検討していく。 -->
-                        </div>
-                    </div>
+                <div class="stenosis-table">
+                    <h6>プラーク狭窄情報</h6>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>右</th>
+                            <th></th>
+                            <th></th>
+                            <th>左</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>CCA</th>
+                            <th>BIF</th>
+                            <th>ICA</th>
+                            <th>CCA</th>
+                            <th>BIF</th>
+                            <th>ICA</th>
+                        </tr>
+                        <tr>
+                            <th>計測法</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>狭窄率(%)</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>分類</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="report-form__results">
-                    <div class="report-form__results--left">
-                        <h5>左</h5>
-                        <h6>プラーク狭窄率(%)</h6>
-                        <div class="report-form__result--CCA">
-                            <label for="CCA">CCA</label>
-                            <select name="CCA" id="">
-                                <option value="1">ECST</option>
-                                <option value="2">NASCET</option>
-                                <option value="3">Area</option>
-                            </select>
-                            <input type="text" name="CCA">
-                        </div>
-                        <div class="report-form__result--BIF">
-                            <label for="BIF">BIF</label>
-                            <select name="BIF" id="">
-                                <option value="1">ECST</option>
-                                <option value="2">NASCET</option>
-                                <option value="3">Area</option>
-                            </select>
-                            <input type="text" name="BIF">
-                        </div>
-                        <div class="report-form__result--ICA">
-                            <label for="ICA">ICA</label>
-                            <select name="ICA" id="">
-                                <option value="1">ECST</option>
-                                <option value="2">NASCET</option>
-                                <option value="3">Area</option>
-                            </select>
-                            <input type="text" name="ICA">
-                        </div>
-                        <div class="report-form__schema">
-                            <h6>シェーマ</h6>
-                            <!-- シェーマを描くスペースを作る -->
-                        </div>
-                        <div class="report-form__findings">
-                            <h6>所見</h6>
-                            <textarea name="findings" id=""></textarea>
-                            <!-- とりあえず、一旦はフリーで文字入力するスペース。後に定型文を検討していく。 -->
-                        </div>
-                    </div>
+                <div class="findings">
+                    <h6>右</h6>
+                    <div class="schema"></div>
+                    <div class="comment"></div>
                 </div>
-                <input type="submit" id="submit" name="submit">
-            </form>
+                <div class="findings">
+                    <h6>左</h6>
+                    <div class="schema"></div>
+                    <div class="comment"></div>
+                </div>
+                <div class="buttons">
+                    <!-- form画面に戻って修正するボタン -->
+                    <button onclick="back()">戻る</button>
+                    <!-- 印刷後、index.htmlへ戻るボタン -->
+                    <button onclick="fin()">終了</button>
+                </div>
+            </div>
         </div>
-    </div>
-    <script src="scripts/main.js"></script>
+        <script src="scripts/main.js"></script>
 
 </body>
 
