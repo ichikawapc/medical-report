@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Report</title>
+    <link rel="stylesheet" href="styles/carotid.css">
 </head>
 
 <body>
@@ -46,113 +47,244 @@
                     <label for="BD">生年月日</label>
                     <input type="date" name="BD" id="BD">
                 </div>
-                <input type="button" value="送信" id="checkButton">
             </div>
-            <div class="outputFormC">
-                <h2>頸部血管超音波検査　報告書</h2>
-                <div class="patient-information">
-                    <div>
-                        <p>検査日:&nbsp;</p>
-                        <!-- formからdateを取得 -->
-                        <p id="outputDate"></p>
+            <div class="input-report__results">
+                <div class="input-report__results--right">
+                    <h5>右</h5>
+                    <h6>プラーク狭窄率(%)</h6>
+                    <div class="input-report__results--CCA">
+                        <label for="CCA">CCA</label>
+                        <select name="CCA" id="CCA-method__R">
+                            <option value="null">----</option>
+                            <option value="ECST">ECST</option>
+                            <option value="NASCET">NASCET</option>
+                            <option value="Area">Area</option>
+                        </select>
+                        <input type="text" name="CCA" id="CCA-result__R">
+                        <select name="CCA" id="CCA-classification__R">
+                            <option value="null">----</option>
+                            <option value="Ⅰa">Ⅰa</option>
+                            <option value="Ⅰb">Ⅰb</option>
+                            <option value="Ⅱa">Ⅱa</option>
+                            <option value="Ⅱb">Ⅱb</option>
+                            <option value="Ⅲa">Ⅲa</option>
+                            <option value="Ⅲb">Ⅲb</option>
+                            <option value="Ⅳ">Ⅳ</option>
+                        </select>
                     </div>
-                    <div>
-                        <p>依頼科:&nbsp;</p>
-                        <!-- formからdepartmentを取得 -->
-                        <p id="outputDepartment"></p>
+                    <div class="input-report__results--BIF">
+                        <label for="BIF">BIF</label>
+                        <select name="BIF" id="BIF-method__R">
+                            <option value="null">----</option>
+                            <option value="ECST">ECST</option>
+                            <option value="NASCET">NASCET</option>
+                            <option value="Area">Areaf</option>
+                        </select>
+                        <input type="text" name="BIF" id="BIF-result__R">
+                        <select name="BIF" id="BIF-classification__R">
+                            <option value="null">----</option>
+                            <option value="Ⅰa">Ⅰa</option>
+                            <option value="Ⅰb">Ⅰb</option>
+                            <option value="Ⅱa">Ⅱa</option>
+                            <option value="Ⅱb">Ⅱb</option>
+                            <option value="Ⅲa">Ⅲa</option>
+                            <option value="Ⅲb">Ⅲb</option>
+                            <option value="Ⅳ">Ⅳ</option>
+                        </select>
                     </div>
-                    <br>
-                    <div>
-                        <p>ID:&nbsp;</p>
-                        <!-- formからidを取得 -->
-                        <p id="outputId"></p>
-                    </div>
-                    <br>
-                    <div>
-                        <p>氏名:&nbsp;</p>
-                        <!-- formからnameを取得し、最後に「殿」を付ける -->
-                        <p id="outputName"></p>
-                    </div>
-                    <div>
-                        <p>性別:&nbsp;</p>
-                        <!-- formからsexを取得 -->
-                        <p id="outputSex"></p>
-                    </div>
-                    <br>
-                    <div>
-                        <p>生年月日:&nbsp;</p>
-                        <!-- formからdateOfBirthを取得 -->
-                        <p id="outputBD"></p>
-                        <!-- 生年月日の横に年齢を表示、最後に「歳」を付ける -->
-                        <p></p>
+                    <div class="input-report__results--ICA">
+                        <label for="ICA">ICA</label>
+                        <select name="ICA" id="ICA-method__R">
+                            <option value="null">----</option>
+                            <option value="ECST">ECST</option>
+                            <option value="NASCET">NASCET</option>
+                            <option value="Area">Area</option>
+                        </select>
+                        <input type="text" name="ICA" id="ICA-result__R">
+                        <select name="ICA" id="ICA-classification__R">
+                            <option value="null">----</option>
+                            <option value="Ⅰa">Ⅰa</option>
+                            <option value="Ⅰb">Ⅰb</option>
+                            <option value="Ⅱa">Ⅱa</option>
+                            <option value="Ⅱb">Ⅱb</option>
+                            <option value="Ⅲa">Ⅲa</option>
+                            <option value="Ⅲb">Ⅲb</option>
+                            <option value="Ⅳ">Ⅳ</option>
+                        </select>
                     </div>
                 </div>
-                <div class="stenosis-table">
-                    <h6>プラーク狭窄情報</h6>
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>右</th>
-                            <th></th>
-                            <th></th>
-                            <th>左</th>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <th>CCA</th>
-                            <th>BIF</th>
-                            <th>ICA</th>
-                            <th>CCA</th>
-                            <th>BIF</th>
-                            <th>ICA</th>
-                        </tr>
-                        <tr>
-                            <th>計測法</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>狭窄率(%)</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>分類</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
+                <div class="input-report__results--left">
+                    <h5>左</h5>
+                    <h6>プラーク狭窄率(%)</h6>
+                    <div class="input-report__results--CCA">
+                        <label for="CCA">CCA</label>
+                        <select name="CCA" id="CCA-method__L">
+                            <option value="null">----</option>
+                            <option value="ECST">ECST</option>
+                            <option value="NASCET">NASCET</option>
+                            <option value="Area">Area</option>
+                        </select>
+                        <input type="text" name="CCA" id="CCA-result__L">
+                        <select name="CCA" id="CCA-classification__L">
+                            <option value="null">----</option>
+                            <option value="Ⅰa">Ⅰa</option>
+                            <option value="Ⅰb">Ⅰb</option>
+                            <option value="Ⅱa">Ⅱa</option>
+                            <option value="Ⅱb">Ⅱb</option>
+                            <option value="Ⅲa">Ⅲa</option>
+                            <option value="Ⅲb">Ⅲb</option>
+                            <option value="Ⅳ">Ⅳ</option>
+                        </select>
+                    </div>
+                    <div class="input-report__results--BIF">
+                        <label for="BIF">BIF</label>
+                        <select name="BIF" id="BIF-method__L">
+                            <option value="null">----</option>]
+                            <option value="ECST">ECST</option>
+                            <option value="NASCET">NASCET</option>
+                            <option value="Area">Area</option>
+                        </select>
+                        <input type="text" name="BIF" id="BIF-result__L">
+                        <select name="BIF" id="BIF-classification__L">
+                            <option value="null">----</option>
+                            <option value="Ⅰa">Ⅰa</option>
+                            <option value="Ⅰb">Ⅰb</option>
+                            <option value="Ⅱa">Ⅱa</option>
+                            <option value="Ⅱb">Ⅱb</option>
+                            <option value="Ⅲa">Ⅲa</option>
+                            <option value="Ⅲb">Ⅲb</option>
+                            <option value="Ⅳ">Ⅳ</option>
+                        </select>
+                    </div>
+                    <div class="input-report__result--ICA">
+                        <label for="ICA">ICA</label>
+                        <select name="ICA" id="ICA-method__L">
+                            <option value="null">----</option>
+                            <option value="ECST">ECST</option>
+                            <option value="NASCET">NASCET</option>
+                            <option value="Area">Area</option>
+                        </select>
+                        <input type="text" name="ICA" id="ICA-result__L">
+                        <select name="ICA" id="ICA-classification__L">
+                            <option value="null">----</option>
+                            <option value="Ⅰa">Ⅰa</option>
+                            <option value="Ⅰb">Ⅰb</option>
+                            <option value="Ⅱa">Ⅱa</option>
+                            <option value="Ⅱb">Ⅱb</option>
+                            <option value="Ⅲa">Ⅲa</option>
+                            <option value="Ⅲb">Ⅲb</option>
+                            <option value="Ⅳ">Ⅳ</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="findings">
-                    <h6>右</h6>
-                    <div class="schema"></div>
-                    <div class="comment"></div>
+            </div>
+            <input type="button" value="送信" id="checkButton">
+
+        </div>
+        <div class="output-report">
+            <h2>頸部血管超音波検査　報告書</h2>
+            <div class="patient-information">
+                <div>
+                    <p>検査日:&nbsp;</p>
+                    <!-- formからdateを取得 -->
+                    <p id="outputDate"></p>
                 </div>
-                <div class="findings">
-                    <h6>左</h6>
-                    <div class="schema"></div>
-                    <div class="comment"></div>
+                <div>
+                    <p>依頼科:&nbsp;</p>
+                    <!-- formからdepartmentを取得 -->
+                    <p id="outputDepartment"></p>
                 </div>
-                <div class="buttons">
-                    <!-- form画面に戻って修正するボタン -->
-                    <button onclick="back()">戻る</button>
-                    <!-- 印刷後、index.htmlへ戻るボタン -->
-                    <button onclick="fin()">終了</button>
+                <br>
+                <div>
+                    <p>ID:&nbsp;</p>
+                    <!-- formからidを取得 -->
+                    <p id="outputId"></p>
                 </div>
+                <br>
+                <div>
+                    <p>氏名:&nbsp;</p>
+                    <!-- formからnameを取得し、最後に「殿」を付ける -->
+                    <p id="outputName"></p>
+                </div>
+                <div>
+                    <p>性別:&nbsp;</p>
+                    <!-- formからsexを取得 -->
+                    <p id="outputSex"></p>
+                </div>
+                <br>
+                <div>
+                    <p>生年月日:&nbsp;</p>
+                    <!-- formからdateOfBirthを取得 -->
+                    <p id="outputBD"></p>
+                    <!-- 生年月日の横に年齢を表示、最後に「歳」を付ける -->
+                    <p></p>
+                </div>
+            </div>
+            <div class="stenosis-table">
+                <h6>プラーク狭窄情報</h6>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>右</th>
+                        <th></th>
+                        <th></th>
+                        <th>左</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>CCA</th>
+                        <th>BIF</th>
+                        <th>ICA</th>
+                        <th>CCA</th>
+                        <th>BIF</th>
+                        <th>ICA</th>
+                    </tr>
+                    <tr>
+                        <th>計測法</th>
+                        <td id="output-CCA-method__R"></td>
+                        <td id="output-BIF-method__R"></td>
+                        <td id="output-ICA-method__R"></td>
+                        <td id="output-CCA-method__L"></td>
+                        <td id="output-BIF-method__L"></td>
+                        <td id="output-ICA-method__L"></td>
+                    </tr>
+                    <tr>
+                        <th>狭窄率(%)</th>
+                        <td id="output-CCA-result__R"></td>
+                        <td id="output-BIF-result__R"></td>
+                        <td id="output-ICA-result__R"></td>
+                        <td id="output-CCA-result__L"></td>
+                        <td id="output-BIF-result__L"></td>
+                        <td id="output-ICA-result__L"></td>
+                    </tr>
+                    <tr>
+                        <th>分類</th>
+                        <td id="output-CCA-classification__R"></td>
+                        <td id="output-BIF-classification__R"></td>
+                        <td id="output-ICA-classification__R"></td>
+                        <td id="output-CCA-classification__L"></td>
+                        <td id="output-BIF-classification__L"></td>
+                        <td id="output-ICA-classification__L"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="findings">
+                <h6>右</h6>
+                <div class="schema"></div>
+                <div class="comment"></div>
+            </div>
+            <div class="findings">
+                <h6>左</h6>
+                <div class="schema"></div>
+                <div class="comment"></div>
+            </div>
+            <div class="buttons">
+                <!-- form画面に戻って修正するボタン -->
+                <button onclick="back()">戻る</button>
+                <!-- 印刷後、index.htmlへ戻るボタン -->
+                <button onclick="fin()">終了</button>
             </div>
         </div>
         <script src="scripts/main.js"></script>
