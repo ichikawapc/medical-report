@@ -1,16 +1,47 @@
-function confirmFormC() {
+// selectタグの文字色設定
+function changeColor(hoge) {
+    if (hoge.value == "null") {
+        hoge.style.color = "#999999";
+    } else {
+        hoge.style.color = "#000000";
+    }
+}
+
+// 計測不能ボタンの機能
+function inabilityCCAR() {
+    document.getElementById("CCA-result__R").value = "計測不能";
+}
+
+function inabilityBIFR() {
+    document.getElementById("BIF-result__R").value = "計測不能";
+}
+
+function inabilityICAR() {
+    document.getElementById("ICA-result__R").value = "計測不能";
+}
+
+function inabilityCCAL() {
+    document.getElementById("CCA-result__L").value = "計測不能";
+}
+
+function inabilityBIFL() {
+    document.getElementById("BIF-result__L").value = "計測不能";
+}
+
+function inabilityICAL() {
+    document.getElementById("ICA-result__L").value = "計測不能";
+}
+
+// 報告書の出力機能
+function outputReport() {
     // 患者情報の取得
     outputDate.innerText = inputDate.value;
-    if (inputDepartment.value == "outpatient") {
-        outputDepartment.innerText = "外来";
-    } else if (inputDepartment.value == "2F") {
-        outputDepartment.innerText = "2F";
-    } else if (inputDepartment.value == "3F") {
-        outputDepartment.innerText = "3F";
-    } else if (inputDepartment.value == "5F") {
-        outputDepartment.innerText = "5F";
-    } else {
+    if (inputDepartment.value == "null") {
         outputDepartment.innerText = "";
+    } else if (inputDepartment.value == "outpatient") {
+        outputDepartment.innerText = "外来";
+    } else {
+        outputDepartment.innerText = inputDepartment.value;
     }
     outputId.innerText = inputId.value;
     outputName.innerText = inputName.value + "　殿";
@@ -168,11 +199,6 @@ let outputICAResultL = document.getElementById("output-ICA-result__L");
 
 let inputICAClassificationL = document.getElementById("ICA-classification__L");
 let outputICAClassificationL = document.getElementById("output-ICA-classification__L");
-
-// 送信ボタンの紐付け
-
-let checkButton = document.getElementById("checkButton");
-checkButton.addEventListener("click", confirmFormC);
 
 // 戻るボタンの操作
 function back() {

@@ -1,3 +1,15 @@
+select {
+    color: #999999;
+}
+
+option {
+    color: #000000;
+}
+
+.option__null {
+    color: #999999;
+}
+
 th,
 td {
     border: 1px #000000 solid;

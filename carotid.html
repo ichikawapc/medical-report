@@ -19,8 +19,8 @@
                 </div>
                 <div>
                     <label for="department">依頼科</label>
-                    <select name="department" id="department">
-                        <option value="null">----</option>
+                    <select name="department" id="department" onchange="changeColor(this)">
+                        <option class="option__null" value="null" selected>----</option>
                         <option value="outpatient">外来</option>
                         <option value="2F">2F</option>
                         <option value="3F">3F</option>
@@ -37,8 +37,8 @@
                 </div>
                 <div>
                     <label for="sex">性別</label>
-                    <select name="sex" id="sex">
-                        <option value="null">----</option>
+                    <select name="sex" id="sex" onchange="changeColor(this)">
+                        <option class="option__null" value="null" selected>----</option>
                         <option value="male">男性</option>
                         <option value="female">女性</option>
                     </select>
@@ -54,15 +54,15 @@
                     <h6>プラーク狭窄率(%)</h6>
                     <div class="input-report__results--CCA">
                         <label for="CCA">CCA</label>
-                        <select name="CCA" id="CCA-method__R">
-                            <option value="null">----</option>
+                        <select name="CCA" id="CCA-method__R" onchange="changeColor(this)">
+                            <option class="option__null" value="null" selected>(計測法)</option>
                             <option value="ECST">ECST</option>
                             <option value="NASCET">NASCET</option>
                             <option value="Area">Area</option>
                         </select>
                         <input type="text" name="CCA" id="CCA-result__R">
-                        <select name="CCA" id="CCA-classification__R">
-                            <option value="null">----</option>
+                        <select name="CCA" id="CCA-classification__R" onchange="changeColor(this)">
+                            <option class="option__null" value="null" selected>(分類)</option>
                             <option value="Ⅰa">Ⅰa</option>
                             <option value="Ⅰb">Ⅰb</option>
                             <option value="Ⅱa">Ⅱa</option>
@@ -71,18 +71,19 @@
                             <option value="Ⅲb">Ⅲb</option>
                             <option value="Ⅳ">Ⅳ</option>
                         </select>
+                        <button class="inability-btn" onclick="inabilityCCAR()">計測不能</button>
                     </div>
                     <div class="input-report__results--BIF">
                         <label for="BIF">BIF</label>
-                        <select name="BIF" id="BIF-method__R">
-                            <option value="null">----</option>
+                        <select name="BIF" id="BIF-method__R" onchange="changeColor(this)">
+                            <option class="option__null" value="null" selected>(計測法)</option>
                             <option value="ECST">ECST</option>
                             <option value="NASCET">NASCET</option>
                             <option value="Area">Areaf</option>
                         </select>
                         <input type="text" name="BIF" id="BIF-result__R">
-                        <select name="BIF" id="BIF-classification__R">
-                            <option value="null">----</option>
+                        <select name="BIF" id="BIF-classification__R" onchange="changeColor(this)">
+                            <option class="option__null" value="null" selected>(分類)</option>
                             <option value="Ⅰa">Ⅰa</option>
                             <option value="Ⅰb">Ⅰb</option>
                             <option value="Ⅱa">Ⅱa</option>
@@ -91,18 +92,19 @@
                             <option value="Ⅲb">Ⅲb</option>
                             <option value="Ⅳ">Ⅳ</option>
                         </select>
+                        <button class="inability-btn" onclick="inabilityBIFR()">計測不能</button>
                     </div>
                     <div class="input-report__results--ICA">
                         <label for="ICA">ICA</label>
-                        <select name="ICA" id="ICA-method__R">
-                            <option value="null">----</option>
+                        <select name="ICA" id="ICA-method__R" onchange="changeColor(this)">
+                            <option class="option__null" value="null" selected>(計測法)</option>
                             <option value="ECST">ECST</option>
                             <option value="NASCET">NASCET</option>
                             <option value="Area">Area</option>
                         </select>
                         <input type="text" name="ICA" id="ICA-result__R">
-                        <select name="ICA" id="ICA-classification__R">
-                            <option value="null">----</option>
+                        <select name="ICA" id="ICA-classification__R" onchange="changeColor(this)">
+                            <option class="option__null" value="null" selected>(分類)</option>
                             <option value="Ⅰa">Ⅰa</option>
                             <option value="Ⅰb">Ⅰb</option>
                             <option value="Ⅱa">Ⅱa</option>
@@ -111,6 +113,7 @@
                             <option value="Ⅲb">Ⅲb</option>
                             <option value="Ⅳ">Ⅳ</option>
                         </select>
+                        <button class="inability-btn" onclick="inabilityICAR()">計測不能</button>
                     </div>
                 </div>
                 <div class="input-report__results--left">
@@ -118,15 +121,15 @@
                     <h6>プラーク狭窄率(%)</h6>
                     <div class="input-report__results--CCA">
                         <label for="CCA">CCA</label>
-                        <select name="CCA" id="CCA-method__L">
-                            <option value="null">----</option>
+                        <select name="CCA" id="CCA-method__L" onchange="changeColor(this)">
+                            <option class="option__null" value="null" selected>(計測法)</option>
                             <option value="ECST">ECST</option>
                             <option value="NASCET">NASCET</option>
                             <option value="Area">Area</option>
                         </select>
                         <input type="text" name="CCA" id="CCA-result__L">
-                        <select name="CCA" id="CCA-classification__L">
-                            <option value="null">----</option>
+                        <select name="CCA" id="CCA-classification__L" onchange="changeColor(this)">
+                            <option class="option__null" value="null" selected>(分類)</option>
                             <option value="Ⅰa">Ⅰa</option>
                             <option value="Ⅰb">Ⅰb</option>
                             <option value="Ⅱa">Ⅱa</option>
@@ -135,18 +138,19 @@
                             <option value="Ⅲb">Ⅲb</option>
                             <option value="Ⅳ">Ⅳ</option>
                         </select>
+                        <button class="inability-btn" onclick="inabilityCCAL()">計測不能</button>
                     </div>
                     <div class="input-report__results--BIF">
                         <label for="BIF">BIF</label>
-                        <select name="BIF" id="BIF-method__L">
-                            <option value="null">----</option>]
+                        <select name="BIF" id="BIF-method__L" onchange="changeColor(this)">
+                            <option class="option__null" value="null" selected>(計測法)</option>
                             <option value="ECST">ECST</option>
                             <option value="NASCET">NASCET</option>
                             <option value="Area">Area</option>
                         </select>
                         <input type="text" name="BIF" id="BIF-result__L">
-                        <select name="BIF" id="BIF-classification__L">
-                            <option value="null">----</option>
+                        <select name="BIF" id="BIF-classification__L" onchange="changeColor(this)">
+                            <option class="option__null" value="null" selected>(分類)</option>
                             <option value="Ⅰa">Ⅰa</option>
                             <option value="Ⅰb">Ⅰb</option>
                             <option value="Ⅱa">Ⅱa</option>
@@ -155,18 +159,19 @@
                             <option value="Ⅲb">Ⅲb</option>
                             <option value="Ⅳ">Ⅳ</option>
                         </select>
+                        <button class="inabilityh-btn" onclick="inabilityBIFL()">計測不能</button>
                     </div>
                     <div class="input-report__result--ICA">
                         <label for="ICA">ICA</label>
-                        <select name="ICA" id="ICA-method__L">
-                            <option value="null">----</option>
+                        <select name="ICA" id="ICA-method__L" onchange="changeColor(this)">
+                            <option class="option__null" value="null" selected>(計測法)</option>
                             <option value="ECST">ECST</option>
                             <option value="NASCET">NASCET</option>
                             <option value="Area">Area</option>
                         </select>
                         <input type="text" name="ICA" id="ICA-result__L">
-                        <select name="ICA" id="ICA-classification__L">
-                            <option value="null">----</option>
+                        <select name="ICA" id="ICA-classification__L" onchange="changeColor(this)">
+                            <option class="option__null" value="null" selected>(分類)</option>
                             <option value="Ⅰa">Ⅰa</option>
                             <option value="Ⅰb">Ⅰb</option>
                             <option value="Ⅱa">Ⅱa</option>
@@ -175,11 +180,11 @@
                             <option value="Ⅲb">Ⅲb</option>
                             <option value="Ⅳ">Ⅳ</option>
                         </select>
+                        <button class="inability-btn" onclick="inabilityICAL()">計測不能</button>
                     </div>
                 </div>
             </div>
-            <input type="button" value="送信" id="checkButton">
-
+            <button onclick="outputReport()">出力</button>
         </div>
         <div class="output-report">
             <h2>頸部血管超音波検査　報告書</h2>
