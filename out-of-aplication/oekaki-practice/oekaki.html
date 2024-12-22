@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お絵描きアプリ</title>
+</head>
+
+<body>
+    <!-- キャンバス　描画エリア -->
+    <canvas id="drawing-area" width="500" height="400"></canvas>
+
+    <!-- 線の太さの表示欄 -->
+    <p id="width-display">3</p>
+
+    <!-- 線の太さを決めるスライダー -->
+    <input type="range" id="slider" min="1" step="1" max="30" value="3"><br>
+    <label for="slider">線の太さ</label>
+
+    <!-- 線の色を決めるカラーピッカー -->
+    <input type="color" id="color-picker" value="#777777"><br>
+    <label for="color-picker">線の色</label>
+
+    <!-- 消去ボタン -->
+    <button id="clear-button">Clear</button>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

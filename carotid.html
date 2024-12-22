@@ -115,6 +115,19 @@
                         </select>
                         <button class="inability-btn" onclick="inabilityICAR()">計測不能</button>
                     </div>
+                    <div class="findings">
+                        <h6>シェーマ</h6>
+                        <!-- <canvas>を挿入 -->
+                        <h6>所見</h6>
+                        <div class="comment-set">
+                            <textarea name="comment" id="comment__R"></textarea>
+                            <div class="comment-btn">
+                                <button class="ta-btn" onclick="insertNpR()">n. p.</button>
+                                <button class="ta-btn" onclick="insertInabilityR()">狭窄率は、陰影が強く計測不能です。</button>
+                                <button class="ta-btn" onclick="clearTaR()">クリア</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="input-report__results--left">
                     <h5>左</h5>
@@ -181,6 +194,19 @@
                             <option value="Ⅳ">Ⅳ</option>
                         </select>
                         <button class="inability-btn" onclick="inabilityICAL()">計測不能</button>
+                    </div>
+                    <div class="findings">
+                        <h6>シェーマ</h6>
+                        <!-- <canvas>を挿入 -->
+                        <h6>所見</h6>
+                        <div class="comment-set">
+                            <textarea name="comment" id="comment__L"></textarea>
+                            <div class="comment-btn">
+                                <button class="ta-btn" onclick="insertNpL()">n. p.</button>
+                                <button class="ta-btn" onclick="insertInabilityL()">狭窄率は、陰影が強く計測不能です。</button>
+                                <button class="ta-btn" onclick="clearTaL()">クリア</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -275,18 +301,18 @@
                     </tr>
                 </table>
             </div>
-            <div class="findings">
+            <div class="output-findings">
                 <h6>右</h6>
                 <div class="schema"></div>
-                <div class="comment"></div>
+                <div class="comment" id="output-comment__R"></div>
             </div>
-            <div class="findings">
+            <div class="output-findings">
                 <h6>左</h6>
                 <div class="schema"></div>
-                <div class="comment"></div>
+                <div class="comment" id="output-comment__L"></div>
             </div>
             <div class="buttons">
-                <!-- form画面に戻って修正するボタン -->
+                <!-- ページ最上部に戻って修正するボタン -->
                 <button onclick="back()">戻る</button>
                 <!-- 印刷後、index.htmlへ戻るボタン -->
                 <button onclick="fin()">終了</button>

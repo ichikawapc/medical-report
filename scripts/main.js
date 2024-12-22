@@ -32,6 +32,31 @@ function inabilityICAL() {
     document.getElementById("ICA-result__L").value = "計測不能";
 }
 
+// 所見の各種ボタンの機能
+function insertNpR() {
+    document.getElementById("comment__R").value = "n. p."
+}
+
+function insertInabilityR() {
+    document.getElementById("comment__R").value = "狭窄率は、陰影が強く計測不能です。";
+}
+
+function clearTaR() {
+    document.getElementById("comment__R").value = "";
+}
+
+function insertNpL() {
+    document.getElementById("comment__L").value = "n. p.";
+}
+
+function insertInabilityL() {
+    document.getElementById("comment__L").value = "狭窄率は、陰影が強く計測不能です。";
+}
+
+function clearTaL() {
+    document.getElementById("comment__L").value = "";
+}
+
 // 報告書の出力機能
 function outputReport() {
     // 患者情報の取得
@@ -88,6 +113,7 @@ function outputReport() {
     } else {
         outputICAClassificationR.innerText = inputICAClassificationR.value;
     }
+    outputCommentR.innerText = inputCommentR.value;
 
     // 左頸動脈結果の取得
     if (inputCCAMethodL.value == "null") {
@@ -123,6 +149,7 @@ function outputReport() {
     } else {
         outputICAClassificationL.innerText = inputICAClassificationL.value;
     }
+    outputCommentL.innerText = inputCommentL.value;
 }
 
 // 患者情報の紐付け
@@ -172,6 +199,9 @@ let outputICAResultR = document.getElementById("output-ICA-result__R");
 let inputICAClassificationR = document.getElementById("ICA-classification__R");
 let outputICAClassificationR = document.getElementById("output-ICA-classification__R");
 
+let inputCommentR = document.getElementById("comment__R");
+let outputCommentR = document.getElementById("output-comment__R");
+
 // 左頸動脈結果の紐付け
 let inputCCAMethodL = document.getElementById("CCA-method__L");
 let outputCCAMethodL = document.getElementById("output-CCA-method__L");
@@ -199,6 +229,9 @@ let outputICAResultL = document.getElementById("output-ICA-result__L");
 
 let inputICAClassificationL = document.getElementById("ICA-classification__L");
 let outputICAClassificationL = document.getElementById("output-ICA-classification__L");
+
+let inputCommentL = document.getElementById("comment__L");
+let outputCommentL = document.getElementById("output-comment__L");
 
 // 戻るボタンの操作
 function back() {
